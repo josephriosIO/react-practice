@@ -21,6 +21,12 @@ class Contacts extends Component {
         name: "jon smith",
         email: "jonsmith@gmail.com",
         phone: "650-782-6646"
+      },
+      {
+        id: 4,
+        name: "jon notsmith",
+        email: "jonsmith@gmail.com",
+        phone: "650-782-6646"
       }
     ]
   };
