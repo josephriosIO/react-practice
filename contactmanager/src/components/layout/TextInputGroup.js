@@ -7,7 +7,8 @@ const TextInputGroup = ({
   value,
   type,
   placeholder,
-  handleChanges
+  handleChanges,
+  error
 }) => {
   return (
     <div className="form-group">
@@ -20,6 +21,7 @@ const TextInputGroup = ({
         className="form-control form-control-lg"
         placeholder={placeholder}
       />
+      <div className="invalid-feedback">this is wrong</div>
     </div>
   );
 };
