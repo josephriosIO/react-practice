@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TextInputGroup from "../layout/TextInputGroup";
 import { Consumer } from "../../context";
 
 class AddContact extends Component {
@@ -36,6 +37,7 @@ class AddContact extends Component {
   };
 
   render() {
+    const { name, email, phone } = this.state;
     return (
       <Consumer>
         {value => {
@@ -45,39 +47,29 @@ class AddContact extends Component {
               <div className="card-header">Add contact</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      onChange={this.handleChanges}
-                      value={this.state.name}
-                      type="text"
-                      name="name"
-                      className="form-control form-control-lg"
-                      placeholder="Enter name..."
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="name">Email</label>
-                    <input
-                      onChange={this.handleChanges}
-                      value={this.state.email}
-                      type="email"
-                      name="email"
-                      className="form-control form-control-lg"
-                      placeholder="Enter email..."
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="name">Phone</label>
-                    <input
-                      onChange={this.handleChanges}
-                      value={this.state.phone}
-                      type="text"
-                      name="phone"
-                      className="form-control form-control-lg"
-                      placeholder="Enter phone..."
-                    />
-                  </div>
+                  <TextInputGroup
+                    label="Name"
+                    name="name"
+                    placeholder="enter Name"
+                    value={name}
+                    handleChanges={this.handleChanges}
+                  />
+                  <TextInputGroup
+                    label="Email"
+                    name="email"
+                    placeholder="enter Email"
+                    type="email"
+                    value={email}
+                    handleChanges={this.handleChanges}
+                  />
+                  <TextInputGroup
+                    label="Phone"
+                    name="phone"
+                    placeholder="enter Phone"
+                    value={phone}
+                    handleChanges={this.handleChanges}
+                  />
+
                   <input
                     type="submit"
                     value="Add Contact"
