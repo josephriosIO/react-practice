@@ -23,14 +23,17 @@ class AddContact extends Component {
 
     if (name === "") {
       this.setState({ errors: { name: "Name is Required" } });
+      return;
     }
 
     if (email === "") {
       this.setState({ errors: { email: "Email is Required" } });
+      return;
     }
 
     if (phone === "") {
       this.setState({ errors: { phone: "Phone is Required" } });
+      return;
     }
 
     const newContact = {
@@ -65,7 +68,7 @@ class AddContact extends Component {
                   <TextInputGroup
                     label="Name"
                     name="name"
-                    placeholder="enter Name"
+                    placeholder="enter name..."
                     value={name}
                     handleChanges={this.handleChanges}
                     error={errors.name}
@@ -73,7 +76,7 @@ class AddContact extends Component {
                   <TextInputGroup
                     label="Email"
                     name="email"
-                    placeholder="enter Email"
+                    placeholder="enter email..."
                     type="email"
                     value={email}
                     handleChanges={this.handleChanges}
@@ -82,7 +85,7 @@ class AddContact extends Component {
                   <TextInputGroup
                     label="Phone"
                     name="phone"
-                    placeholder="enter Phone"
+                    placeholder="enter phone..."
                     value={phone}
                     handleChanges={this.handleChanges}
                     error={errors.phone}
